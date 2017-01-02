@@ -1,0 +1,25 @@
+<head>
+<body>
+<h1> Question List </h1>
+{% if questionlist %}
+<table width="100%" border="0" >
+  <tr>
+    <td bgcolor="#b5dcb3" height="400" width=""100%>
+    <form action="/questionservice/get_value/" method = "Post">
+    {% csrf_token %}
+     {% for question in questionlist %}
+     <label for="post{{ forloop.counter }}">{{question.question_text}}</label></br>
+      {% endfor %}
+      <input type="submit" value="add">
+      </form>
+      </br>
+      <form action ="/questionservice/logout_view/" method="post">
+      {% csrf_token %}
+        <center><input type="submit" value="logout"></center>
+     </form>
+    </td>
+  </tr>  
+{% endif %}
+</table>
+</body>
+</head>

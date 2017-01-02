@@ -1,0 +1,11 @@
+<head>
+<form action="/questionservice/add/" method="post">
+{%csrf_token%}
+	Question<input type="text" name="question"></br>
+	Choice<input type="text" name="choice"></br>
+	Choice1<input type="text" name="choice1"></br>
+	Choice2<input type="text" name="choice2"></br>
+	Answer<input type="text" name="answer"></br>
+	<input type="submit" value="add">
+</form>
+</head>

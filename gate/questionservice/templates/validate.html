@@ -1,0 +1,11 @@
+{% if msg %}
+        <ul>
+            {% for error in msg %}
+             <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+{% endif %}
+  <form action = "/questionservice/view_questionpage/">
+  {% csrf_token %}
+   <input type = "submit" value="next">
+  </form>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+{% if scorelist %}  
+<table width="100%" border="0" >
+  <tr>
+  <form action="/questionservice/view_questionpage/" method="post">
+   {% csrf_token %}
+    <td bgcolor="#b5dcb3" height="400" width=""100%>
+    <h1>All the best for your exam</h1>
+    {% for score in scorelist %}
+     Score:<label for="score{{ forloop.counter }}">{{ score.score }}</label>
+           <label for="score{{ forloop.counter }}">{{ score.test_time }}</label>
+           <br>
+    {% endfor %}
+{% endif %}
+    <input type="submit" value="start test"></br>
+   </form>
+    <form action ="/questionservice/logout_view/" method="post">
+      {% csrf_token %}
+      <center><input type="submit" value="logout"></center>
+    </form>
+    </td> 
+  </tr>
+</table>
+</body>
+</html>

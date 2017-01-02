@@ -1,0 +1,14 @@
+ <h1>{{question.question_text}}</h1>
+   <form action="/questionservice/validate/{{question.id}}/" method="post">
+     {% csrf_token %} 
+    {% for choice in question.choice_set.all %}
+     <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.choice_text }}" />
+     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>   
+    {% endfor %}
+     <input type="submit" name="next" value="ok">
+   </form>
+    
+
+     
+    
+    
